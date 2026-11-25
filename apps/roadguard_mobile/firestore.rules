@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function operationsUser() {
+      return request.auth != null
+        && request.auth.token.roadguard_role in ['viewer', 'editor', 'admin'];
+    }
+
+    function operationsEditor() {
+      return request.auth != null
+        && request.auth.token.roadguard_role in ['editor', 'admin'];
+    }
+
+    match /road_defect_events/{eventId} {
+      allow read: if operationsUser();
+      allow update: if operationsEditor()
+        && resource.data.event_id == eventId
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['status', 'priority_status', 'updated_at'])
+        && request.resource.data.status in [
+          'new', 'reviewing', 'confirmed', 'scheduled', 'resolved', 'dismissed'
+        ]
+        && request.resource.data.priority_status in ['normal', 'important', 'critical']
+        && request.resource.data.updated_at == request.time;
+    }
+  }
+}

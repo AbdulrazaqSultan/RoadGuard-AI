@@ -1,0 +1,18 @@
+{
+  "policy": "reviewed_exact_cross_split_pair_v1",
+  "revision": "7ba2309c243f989d72a6e9a8a9aca902871232ce",
+  "image_sha256": "1dbf9599919d661531f14b7070bc05d4db19198956cb8735176c54dae69fbc4e",
+  "pixel_sha256": "b23aa43e25e5cc9b5f206888780cbc0e565d9b6dad01156fdfdf75ad807469e4",
+  "canonical": {
+    "image": "extracted/images/train/rdd_United_States_United_States_003917.jpg",
+    "label": "extracted/labels/train/rdd_United_States_United_States_003917.txt",
+    "label_sha256": "5910d4c5a01ce5138d74d70db4ac620fd816ac3158999a9ca2953729b8492baa"
+  },
+  "excluded": {
+    "image": "extracted/images/val/rdd_United_States_United_States_001623.jpg",
+    "label": "extracted/labels/val/rdd_United_States_United_States_001623.txt",
+    "label_sha256": "d8efc661a82815934bcdea7af51aaafdf344d7d42f3ef7148a7a83900d187690"
+  },
+  "matched_box_ious_in_canonical_order": [1.0, 1.0, 0.697625, 0.787364],
+  "rationale": "Side-by-side review confirmed the same three longitudinal cracks and one transverse crack. Two boxes are identical and two boundaries vary. Retain the complete publisher-training annotation as the canonical set and exclude the repeated validation pair from the project split."
+}

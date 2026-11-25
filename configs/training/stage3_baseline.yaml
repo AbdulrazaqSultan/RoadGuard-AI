@@ -1,0 +1,19 @@
+data:
+  dataset_root: data/raw/unified
+  source_format: unified
+  dataset_version: unified-7ba2309
+  snapshot_fingerprint: 0eb0721e553c9eec39850e9648c7af04a38c6b13cbc67d98788b38ceab89629f
+  duplicate_review: configs/data/unified_duplicate_review.json
+model:
+  model_variant: n
+  weights: artifacts/models/pretrained/yolo11n.pt
+training:
+  seed: 42
+  epochs: 5
+  image_size: 640
+  batch_size: 8
+  workers: 4
+  augmentation:
+    close_mosaic: 1
+experiment:
+  experiment_name: stage3_yolo11n_baseline

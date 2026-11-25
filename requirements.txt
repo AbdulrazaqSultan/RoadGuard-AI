@@ -1,0 +1,2 @@
+# Install a matched CUDA PyTorch and TorchVision pair before installing [detection].
+-e .[eda,notebooks,dev]

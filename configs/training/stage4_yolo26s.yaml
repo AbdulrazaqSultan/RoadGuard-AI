@@ -1,0 +1,17 @@
+data:
+  dataset_root: data/raw/unified
+  source_format: unified
+  dataset_version: unified-7ba2309
+  snapshot_fingerprint: 0eb0721e553c9eec39850e9648c7af04a38c6b13cbc67d98788b38ceab89629f
+  duplicate_review: configs/data/unified_duplicate_review.json
+model:
+  model_family: yolo26
+  model_variant: s
+  weights: artifacts/experiments/stage3b_yolo26s_screening-bd5f8b1593cb-001/weights/best.pt
+training:
+  epochs: 50
+  early_stopping: 10
+  augmentation:
+    close_mosaic: 1
+experiment:
+  experiment_name: stage4_yolo26s_long_training

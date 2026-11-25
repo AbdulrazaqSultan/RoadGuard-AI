@@ -1,0 +1,16 @@
+dataset_root: data/raw/rdd2022
+source_format: voc
+dataset_version: rdd2022
+snapshot_fingerprint: ""
+processed_root: data/processed
+groups_csv: null
+duplicate_review: ""
+box_diagnostics:
+  tiny_area_fraction: 0.001
+  tiny_pixel_area: 1024.0
+  large_area_fraction: 0.25
+  extreme_aspect_ratio: 10.0
+split:
+  train: 0.8
+  val: 0.1
+  test: 0.1

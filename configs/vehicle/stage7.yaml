@@ -1,0 +1,8 @@
+model:
+  model_family: yolo26
+  model_variant: s
+  weights: artifacts/experiments/stage4_yolo26s_long_training-bfeb3ff5d6c9-001/weights/best.pt
+training:
+  image_size: 640
+experiment:
+  experiment_name: stage7_real_time_vehicle_pipeline

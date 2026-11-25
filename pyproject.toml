@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=80.9,<85"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roadguard-ai"
+version = "0.1.0"
+description = "Reproducible road damage detection with RDD2022 and YOLO"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+dependencies = [
+    "Pillow>=10.4,<13",
+    "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+acquisition = ["huggingface-hub>=1.33,<3", "filelock>=3,<5", "httpx>=0.28,<1"]
+eda = ["matplotlib>=3.9,<4"]
+notebooks = ["jupyterlab>=4.2,<5", "ipykernel>=6.28,<8", "pandas>=2.2,<4"]
+detection = ["ultralytics==8.4.215", "numpy>=1.26,<3", "filelock>=3,<5"]
+lan = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "google-auth>=2.40,<3", "requests>=2.32,<3"]
+dev = ["pytest>=7.4,<10", "ruff==0.12.10", "nbformat>=5.10,<6", "nbconvert>=7.16,<8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["data", "artifacts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

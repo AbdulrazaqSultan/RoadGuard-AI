@@ -1,0 +1,12 @@
+model:
+  model_family: yolo26
+  model_variant: s
+  weights: artifacts/experiments/stage4_yolo26s_long_training-bfeb3ff5d6c9-001/weights/best.pt
+training:
+  image_size: 640
+experiment:
+  experiment_name: stage7_1_event_identity
+vehicle:
+  max_event_span_seconds: 3.0
+  event_database:
+    enabled: true

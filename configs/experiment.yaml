@@ -1,0 +1,5 @@
+experiment_name: yolo11_roadguard
+experiments_root: artifacts/experiments
+metrics_root: artifacts/metrics
+figures_root: artifacts/figures
+sample_images_per_class: 3

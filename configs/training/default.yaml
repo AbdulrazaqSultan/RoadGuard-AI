@@ -1,0 +1,28 @@
+seed: 42
+device: cuda
+image_size: 640
+batch_size: 8
+epochs: 100
+workers: 4
+learning_rate: 0.001
+weight_decay: 0.0005
+optimizer: AdamW
+scheduler: cosine
+early_stopping: 20
+save_period: 5
+amp: true
+deterministic: true
+cudnn_benchmark: false
+tf32: false
+augmentation:
+  hsv_h: 0.015
+  hsv_s: 0.4
+  hsv_v: 0.3
+  degrees: 5.0
+  translate: 0.1
+  scale: 0.25
+  fliplr: 0.5
+  flipud: 0.0
+  mosaic: 0.5
+  mixup: 0.0
+  close_mosaic: 10

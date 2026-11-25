@@ -1,0 +1,7 @@
+data:
+  dataset_root: data/raw/unified
+  source_format: unified
+  dataset_version: unified-7ba2309
+  duplicate_review: configs/data/unified_duplicate_review.json
+experiment:
+  experiment_name: yolo11n_unified_baseline
